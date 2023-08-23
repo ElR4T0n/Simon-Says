@@ -4,18 +4,12 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (max-width: 960px) {
-    body {
-        background-size: contain;
-        background-repeat: repeat;
-    }
-}
 
 .simon-title {
-    font-weight: 600;
-    margin: 20px auto;
+    font-size: 1.5vw;
+    margin: 2vh auto;
     align-items: center;
-    width: 250px;
+    width: 12vw;
     border: 4px solid #000000;
     padding: 1px;
     text-align: center;
@@ -27,11 +21,12 @@ body {
 
 
 .estilodialogo {
+    font-size: 1.5vw;
     margin: auto;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 180px;
+    width: 14vw;
     padding: 5px;
     border-radius: 18px;
     color: white;
@@ -46,29 +41,35 @@ body {
 }
 
 .cuadro {
-    width: 200px;
-    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    height: 85%; 
     opacity: 1;
     transition: opacity 800ms;
-    border: 2px solid #000000;
-    margin-bottom: 35px;
-    position: relative;
-    left: 8%;
-    top: 13%;
+    border: 3px solid #000000;
+    margin-bottom: 1vh;
 }
 
 #tablero {
-    margin-top: 30px;
-    background: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin-top: 2vh;
+    background-color: rgb(0, 0, 0);
     background: radial-gradient(circle, rgb(34, 150, 152) 0%, rgb(124, 16, 130) 100%);
-    width: auto;
-    max-width: 500px;
+    width: 80%;
     height: 500px;
+    max-width: 500px;
+    max-height: 100%;
+    position: relative;
     border-radius: 100%;
     justify-content: center;
     align-items: center;
     border: 3px solid black;
     box-shadow: rgba(0, 00, 0, 1.4) 2px 3px 7px, rgba(0, 0, 0, 1.3) 0px 7px 13px -3px, rgba(0, 0, 0, 1.2) 0px -3px 0px inset;
+
+    
 }
 
 #tablero .row {
@@ -93,7 +94,6 @@ body {
     display: inline-block;
     justify-content: center;
 }
-
 
 
 .boton-start,
@@ -203,36 +203,20 @@ body {
     }
 }
 
-@media (min-width: 768px) {
-
-    .boton-start,
-    .boton-start:after {
-        width: 130px;
-        height: 40px;
-        line-height: 46px;
-        font-size: 15px;
-    }
-}
-
-
-
 .boton-ronda {
-    width: 200px;
-    position: absolute;
-    left: 80%;
+    width: 100%;
+    position: relative;
+    text-align: center;
     color: #0bf4f3;
     border: 1px solid #0bf4f3;
     box-shadow: 0 0 5px #0bf4f3, 0 0 5px #0bf4f3 inset;
     background-color: black;
     text-align: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-top: 2vh;
 }
 
-.boton-ronda:before {
-    height: 0%;
-    width: 2px;
-}
+
 
 .boton-ronda:hover {
     cursor: default;
@@ -263,4 +247,51 @@ body {
     background-color: green;
     border-radius: 0% 0% 100% 0%;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .boton-start,
+    .boton-start:after {
+        width: 120px;
+        height: 40px;
+        line-height: 46px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #tablero {
+        height: 500px;
+    }
+}
+
+@media (max-width: 400px) {
+    #tablero {
+        height: 300px;
+    }
+}
+@media (max-width: 500px) {
+    #tablero {
+        height: 250px;
+    }
+}
+
+@media (max-width: 300px) {
+    #tablero {
+        height: 200px;
+    }
+    .boton-start{
+        font-size: 12px;
+        width: 70%;
+    }
+    .boton-ronda {
+        font-size: 12px;
+        width: 100px;
+        height: 50px;
+    }
 }
